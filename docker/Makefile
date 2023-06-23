@@ -1,10 +1,10 @@
 
 DOCKERCMD=podman
-DOCKERFLAGS=--platform=linux/amd64
+DOCKERFLAGS=
 
-.PHONY: all snap-aligner bcftools r
+.PHONY: all snap-aligner bcftools r-tagc
 
-all: snap-aligner bcftools r
+all: snap-aligner bcftools r-tagc
 
 snap-aligner:
 	$(DOCKERCMD) build $(DOCKERFLAGS) -t $@:2.0.1 -f $@/Dockerfile $@
@@ -12,5 +12,5 @@ snap-aligner:
 bcftools:
 	$(DOCKERCMD) build $(DOCKERFLAGS) -t $@:1.15.1 -f $@/Dockerfile $@
 
-r:
-	$(DOCKERCMD) build $(DOCKERFLAGS) -t $@:4.3.1 -f $@/Dockerfile $@
+r-tagc:
+	$(DOCKERCMD) build $(DOCKERFLAGS) -t $@:4.3.1-TAGC -f $@/Dockerfile $@
