@@ -123,8 +123,6 @@ task align_pair {
         pbs_cpu: "16"
         pbs_walltime: "6:00:00"
         docker: "timeattackgencomp_0.2"
-        docker: "quay.io/snap-aligner:2.0.1--hd03093a_1"
-        docker_binds: "file=/reference.txt or something"
     }
 }
 
